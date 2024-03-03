@@ -132,7 +132,7 @@ jobs:
           $GITHUB_WORKSPACE/$CUSTOM_SCRIPT_1
 
       - name: Update feeds
-        run: cd openwrt/ && ./scripts/feeds update -a
+        run: cd openwrt/ && ./scripts/feeds update -a && sed -i '1i src-git kiddin9 https://github.com/kiddin9/openwrt-packages' feeds.conf.default
 
       - name: Install feeds
         run: cd openwrt/ && ./scripts/feeds install -a
